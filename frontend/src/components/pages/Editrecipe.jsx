@@ -23,7 +23,7 @@ const EditRecipe = () => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const res = await axios.get(`http://localhost:3456/viewSingleRecipe/${id}`, {
+        const res = await axios.get(`https://recipe-app-1pdt.onrender.com/viewSingleRecipe/${id}`, {
           headers: { Authorization: `Bearer ${tokens}` },
         });
         setRecipeData(res.data.singleRecipe);
@@ -51,7 +51,7 @@ const EditRecipe = () => {
     });
 
     try {
-      const res = await axios.put(`http://localhost:3456/editRecipe/${id}`, formData, {
+      const res = await axios.put(`https://recipe-app-1pdt.onrender.com/editRecipe/${id}`, formData, {
         headers: { Authorization: `Bearer ${tokens}`, 'Content-Type': 'multipart/form-data' },
       });
       if (res.data) {

@@ -13,7 +13,7 @@ const SingleRecipeView = () => {
   useEffect(() => {
     const getSingleRecipe = async () => {
       try {
-        const res = await axios.get(`http://localhost:3456/viewSingleRecipe/${id}`, {
+        const res = await axios.get(`https://recipe-app-1pdt.onrender.com/viewSingleRecipe/${id}`, {
           headers: { Authorization: `Bearer ${tokens}` },
         });
         if (res.data) {
@@ -33,7 +33,7 @@ const SingleRecipeView = () => {
         {/* Left Column - Recipe Image */}
         <div className="relative flex justify-center">
           <img
-            src={`http://localhost:3456${recipe.image}`}
+            src={`https://recipe-app-1pdt.onrender.com${recipe.image}`}
             alt={recipe.name}
             className="w-full h-[600px] object-cover rounded-xl shadow-lg border border-orange-300"
           />

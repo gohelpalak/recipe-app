@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:3456/getCategory");
+        const res = await axios.get("https://recipe-app-1pdt.onrender.com/getCategory");
         setCategory(res.data.recipe);
       } catch (error) {
         console.error("Failed to fetch categories", error);
@@ -34,7 +34,7 @@ const Home = () => {
         if (searchTerm) params.append('category', searchTerm);
         if (dietType) params.append('type', dietType);
 
-        const res = await axios.get(`http://localhost:3456/getRecipe?${params.toString()}`);
+        const res = await axios.get(`https://recipe-app-1pdt.onrender.com/getRecipe?${params.toString()}`);
         setRecipes(res.data.allRecipes);
       } catch (error) {
         console.error("Failed to fetch recipes", error);
@@ -120,7 +120,7 @@ const Home = () => {
           >
             <div className="relative">
               <img 
-                src={`http://localhost:3456${recipe.image}`} 
+                src={`https://recipe-app-1pdt.onrender.com${recipe.image}`} 
                 alt={recipe.title} 
                 className="w-full h-48 object-cover"
               />

@@ -11,7 +11,7 @@ function AuthContextProvider({children}) {
     // console.log("context token s",token);
     const fetchUser = async()=>{
         try {
-            const res = await axios.get("http://localhost:3456/profile",{
+            const res = await axios.get("https://recipe-app-1pdt.onrender.com/profile",{
                 headers:{ Authorization:`Bearer ${tokens}`}
             })
             // console.log("context data",  res.data);

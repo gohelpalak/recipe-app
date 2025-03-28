@@ -54,7 +54,7 @@ const RecipeForm = () => {
     });
 
     try {
-      const res = await axios.post("http://localhost:3456/addRecipe", formData, {
+      const res = await axios.post("https://recipe-app-1pdt.onrender.com/addRecipe", formData, {
         headers: {
           Authorization: `Bearer ${tokens}`,
           "Content-Type": "multipart/form-data"

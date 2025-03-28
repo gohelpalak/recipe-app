@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3456/login', credentials);
+      const res = await axios.post('https://recipe-app-1pdt.onrender.com/login', credentials);
       if (res.data) {
         login(res.data.token);
         toast.success('Login successful!');

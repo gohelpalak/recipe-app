@@ -25,7 +25,7 @@ const Sinup = () => {
           password:formData.password,
           role:"user"
         }
-        const res = await axios.post("http://localhost:3456/register" ,newData)
+        const res = await axios.post("https://recipe-app-1pdt.onrender.com/register" ,newData)
         if (res.data.user) {
           console.log("user registered",res.data.user);
           toast.success("User Registerd Success")

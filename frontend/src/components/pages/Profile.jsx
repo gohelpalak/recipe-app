@@ -11,7 +11,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchSavedRecipes = async () => {
       try {
-        const res = await axios.get('http://localhost:3456/getFavourite', {
+        const res = await axios.get('https://recipe-app-1pdt.onrender.com/getFavourite', {
           headers: { Authorization: `Bearer ${tokens}` },
         });
         setRecipes(res.data.savedRecipes);
@@ -24,7 +24,7 @@ const Profile = () => {
 
   const handleRemove = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:3456/removeFavourite/${id}`, {
+      const res = await axios.delete(`https://recipe-app-1pdt.onrender.com/removeFavourite/${id}`, {
         headers: { Authorization: `Bearer ${tokens}` },
       });
       if (res.status === 200) {
@@ -61,7 +61,7 @@ const Profile = () => {
             {recipes.map((recipe) => (
               <div key={recipe._id} className="bg-white p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                 <img
-                  src={`http://localhost:3456${recipe.image}`}
+                  src={`https://recipe-app-1pdt.onrender.com${recipe.image}`}
                   alt={recipe.name}
                   className="rounded-lg h-64 w-full object-cover mb-4"
                 />

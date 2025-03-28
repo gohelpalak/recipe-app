@@ -12,7 +12,7 @@ const ViewRecipe = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const res = await axios.get('http://localhost:3456/getAllRecipes', {
+        const res = await axios.get('https://recipe-app-1pdt.onrender.com/getAllRecipes', {
           headers: { Authorization: `Bearer ${tokens}` },
         });
         setRecipes(res.data.recipes);
@@ -25,7 +25,7 @@ const ViewRecipe = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:3456/deleteRecipe/${id}`, {
+      const res = await axios.delete(`https://recipe-app-1pdt.onrender.com/deleteRecipe/${id}`, {
         headers: { Authorization: `Bearer ${tokens}` },
       });
       toast.success(res.data.message);
@@ -52,7 +52,7 @@ const ViewRecipe = () => {
           {recipes.map((recipe) => (
             <div key={recipe._id} className="bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-all">
               <img
-                src={`http://localhost:3456${recipe.image}`}
+                src={`https://recipe-app-1pdt.onrender.com${recipe.image}`}
                 alt={recipe.name}
                 className="w-full h-56 object-cover"
               />
